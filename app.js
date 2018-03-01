@@ -11,15 +11,15 @@ $(document).ready(function () {
 
   // BUTTON EVENT HANDLERS
   function stopTickBtnClick(event) {
-
-    $('#dump-config-btn').removeAttr('disabled');
-    $('#clear-btn').removeAttr('disabled');
-    $('#one-tick-btn').removeAttr('disabled');
-    $('#start-tick-btn').removeAttr('disabled');
-
-    $('#stop-tick-btn').attr('disabled', false)
-
     event.preventDefault()
+
+    $('#dump-config-btn').removeAttr('disabled')
+    $('#clear-btn').removeAttr('disabled')
+    $('#one-tick-btn').removeAttr('disabled')
+    $('#start-tick-btn').removeAttr('disabled')
+
+    $('#stop-tick-btn').attr('disabled', true)
+
     console.log('stopBtnClick()')
   }
 
@@ -31,7 +31,11 @@ $(document).ready(function () {
   function startTickBtnClick(event) {
     event.preventDefault()
 
+    $('#dump-config-btn').attr('disabled', true)
+    $('#clear-btn').attr('disabled', true)
+    $('#one-tick-btn').attr('disabled', true)
     $('#start-tick-btn').attr('disabled', true)
+
     $('#stop-tick-btn').removeAttr('disabled')
 
     console.log('startTickBtnClick()')
