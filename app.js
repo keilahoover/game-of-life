@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  const maxRows = 20
+  const maxCols = 20
 
   // SET INITIAL UI STATE
   $('#stop-tick-btn').attr('disabled', true)
@@ -8,6 +10,21 @@ $(document).ready(function () {
   $('#one-tick-btn').click(oneTickBtnClick)
   $('#start-tick-btn').click(startTickBtnClick)
   $('#stop-tick-btn').click(stopTickBtnClick)
+
+  // DRAW INITIAL GRID
+  displayUIGrid()
+
+  // UI GRID FUNCTIONS
+  function displayUIGrid() {
+    for (let i = 0; i < maxRows; i++) {
+      const row = $('<tr>')
+      for (let j = 0; j < maxCols; j++) {
+        const cell = $('<td>')
+        row.append(cell)
+      }
+      $('#ui-grid').append(row)
+    }
+  }
 
   // BUTTON EVENT HANDLERS
   function stopTickBtnClick(event) {
