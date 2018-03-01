@@ -76,6 +76,8 @@ let activeCells = {}
 
   function clearBtnClick(event) {
     event.preventDefault()
+    $('td').removeClass('on')
+    activeCells = {}
   }
 
   function dumpConfigBtnClick(event) {
